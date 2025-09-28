@@ -1048,10 +1048,15 @@ const OurStoryFormContent = ({ initialData, theme, onSave }) => {
     setHasChanges(false);
   };
 
-  // Auto-save when form loses focus (user clicks outside)
+  // Auto-save when form loses focus (user clicks outside) - with debouncing
   const handleFormBlur = () => {
     if (hasChanges) {
-      handleSave();
+      // Add a small delay to prevent aggressive auto-saving on every focus change
+      setTimeout(() => {
+        if (hasChanges) {
+          handleSave();
+        }
+      }, 500);
     }
   };
 
