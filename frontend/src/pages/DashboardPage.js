@@ -1064,7 +1064,7 @@ const OurStoryFormContent = ({ initialData, theme, onSave }) => {
     );
     setStoryTimeline(updatedTimeline);
     setHasChanges(true);
-    // NOTE: No auto-save here - only on explicit save action
+    // Remove auto-save to prevent focus loss - only save on explicit save action
   };
 
   const handleSave = () => {
