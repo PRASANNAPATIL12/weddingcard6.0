@@ -750,8 +750,8 @@ const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTh
   // Handle clicking outside the form to save and close
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      // Auto-save when clicking outside the form
-      if (Object.keys(formData).length > 0) {
+      // Only auto-save if there are substantial changes to prevent aggressive saving
+      if (Object.keys(formData).length > 2) {
         onSubmit(sectionId, formData);
       }
       onClose();
