@@ -1074,16 +1074,10 @@ const OurStoryFormContent = ({ initialData, theme, onSave }) => {
     setHasChanges(false);
   };
 
-  // Auto-save when form loses focus (user clicks outside) - with debouncing
+  // Remove aggressive auto-save that causes focus loss
   const handleFormBlur = () => {
-    if (hasChanges) {
-      // Add a small delay to prevent aggressive auto-saving on every focus change
-      setTimeout(() => {
-        if (hasChanges) {
-          handleSave();
-        }
-      }, 500);
-    }
+    // Removed auto-save on blur to prevent focus loss and form closing issues
+    // User must explicitly save using the Save button
   };
 
   const handleToggleEnabled = (enabled) => {
