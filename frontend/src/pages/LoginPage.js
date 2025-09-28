@@ -69,10 +69,10 @@ const LoginPage = () => {
       let backendUrl = process.env.REACT_APP_BACKEND_URL;
       
       // Check if we're in production environment
-      if (!backendUrl || window.location.origin.includes('emergentagent.com')) {
+      if (!backendUrl || window.location.origin.includes('emergentagent.com') || window.location.origin.includes('preview.emergentagent.com')) {
         // Production environment - use relative URL
         backendUrl = '';
-      } else if (!backendUrl && window.location.origin.includes('localhost')) {
+      } else if (!backendUrl || window.location.origin.includes('localhost')) {
         backendUrl = 'http://localhost:8001';
       }
       
