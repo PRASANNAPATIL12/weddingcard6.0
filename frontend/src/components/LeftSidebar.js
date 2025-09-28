@@ -2100,12 +2100,26 @@ const FormPopup = ({ sectionId, onClose, theme, modalRef, currentTheme, setCurre
     e.preventDefault();
     setSaving(true);
     
-    autoSave();
-    
-    setTimeout(() => {
+    // Manual save when user explicitly submits
+    if (Object.keys(formData).length > 0) {
+      try {
+        const updatedData = { ...weddingData };
+        Object.keys(formData).forEach(field => {
+          updatedData[field] = formData[field];
+        });
+        
+        await saveWeddingData(updatedData);
+        setSaving(false);
+        onClose();
+      } catch (error) {
+        console.error('Error saving data:', error);
+        setSaving(false);
+        alert('Failed to save data. Please check your connection and try again.');
+      }
+    } else {
       setSaving(false);
       onClose();
-    }, 1000);
+    }
   };
 
   const handleChange = (field, value) => {
