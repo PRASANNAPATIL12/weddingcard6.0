@@ -101,13 +101,19 @@ const DashboardPage = () => {
     }
   };
 
-  const handleFormSubmit = (sectionId, formData) => {
-    // Handle form submission and update wedding data
-    let updatedData = { ...weddingData, ...formData };
-    
-    // Use centralized save function with debouncing to prevent aggressive auto-save
-    saveWeddingData(updatedData);
-    setActiveForm(null);
+  const handleFormSubmit = async (sectionId, formData) => {
+    try {
+      // Handle form submission and update wedding data
+      let updatedData = { ...weddingData, ...formData };
+      
+      // Use centralized save function with error handling
+      await saveWeddingData(updatedData);
+      setActiveForm(null);
+    } catch (error) {
+      console.error('Error saving form data:', error);
+      // Don't close the form if save fails - let user try again
+      alert('Failed to save data. Please check your connection and try again.');
+    }
   };
 
   const handleDataChange = async (field, value) => {
