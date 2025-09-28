@@ -737,25 +737,38 @@ const DashboardPage = () => {
 // Form Popup Component
 const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTheme, setCurrentTheme }) => {
   const [formData, setFormData] = useState({});
+  const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(sectionId, formData);
+    if (Object.keys(formData).length > 0) {
+      onSubmit(sectionId, formData);
+      setHasUnsavedChanges(false);
+    }
+    onClose();
   };
 
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
+    setHasUnsavedChanges(true);
   };
 
   // Handle clicking outside the form to save and close
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      // Only auto-save if there are substantial changes to prevent aggressive saving
-      if (Object.keys(formData).length > 2) {
+      // Only auto-save if there are changes and user explicitly clicks outside
+      if (hasUnsavedChanges && Object.keys(formData).length > 0) {
         onSubmit(sectionId, formData);
       }
       onClose();
     }
+  };
+
+  // Handle form close without saving
+  const handleCloseWithoutSaving = () => {
+    setFormData({});
+    setHasUnsavedChanges(false);
+    onClose();
   };
 
   const renderForm = () => {
