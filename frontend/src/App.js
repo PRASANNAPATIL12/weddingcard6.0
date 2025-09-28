@@ -90,7 +90,6 @@ function App() {
       >
         <Router>
           <UserDataProvider>
-            <LeftSidebar />
             <Routes>
             {/* Auth Routes (without navigation) */}
             <Route path="/login" element={<LoginPage />} />
