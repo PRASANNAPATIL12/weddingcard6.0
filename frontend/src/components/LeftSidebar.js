@@ -2094,34 +2094,7 @@ const FormPopup = ({ sectionId, onClose, theme, modalRef, currentTheme, setCurre
   const [saving, setSaving] = useState(false);
   const [sectionEnabled, setSectionEnabled] = useState(true);
 
-  // Auto-save functionality
-  useEffect(() => {
-    const autoSaveTimeout = setTimeout(() => {
-      if (Object.keys(formData).length > 0) {
-        autoSave();
-      }
-    }, 2000); // Auto-save after 2 seconds of inactivity
-
-    return () => clearTimeout(autoSaveTimeout);
-  }, [formData]);
-
-  const autoSave = () => {
-    if (Object.keys(formData).length > 0) {
-      setSaving(true);
-      
-      // Save form data
-      const updatedData = { ...weddingData };
-      Object.keys(formData).forEach(field => {
-        updatedData[field] = formData[field];
-      });
-      
-      saveWeddingData(updatedData);
-      
-      setTimeout(() => {
-        setSaving(false);
-      }, 500);
-    }
-  };
+  // Removed aggressive auto-save functionality to prevent focus loss and form closing issues
 
   const handleSubmit = async (e) => {
     e.preventDefault();
