@@ -757,6 +757,7 @@ const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTh
   const handleChange = (field, value) => {
     setFormData({ ...formData, [field]: value });
     setHasUnsavedChanges(true);
+    // Remove aggressive auto-save - only save when user explicitly saves
   };
 
   // Handle clicking outside the form to save and close
