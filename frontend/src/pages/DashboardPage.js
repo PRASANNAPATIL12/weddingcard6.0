@@ -491,15 +491,13 @@ const DashboardPage = () => {
 
   return (
     <div 
-      className="min-h-screen flex"
+      className="min-h-screen"
       style={{
         background: theme.background,
         fontFamily: theme.fontSecondary
       }}
     >
-      {/* Removed duplicate sidebar - using LeftSidebar component from App.js instead */}
-
-      {/* Right Content Area */}
+      {/* Main Content Area */}
       <div className="flex-1 flex flex-col">
         {/* Top Controls */}
         <div className="p-6 border-b border-white/30 bg-white/10 backdrop-blur-sm">
