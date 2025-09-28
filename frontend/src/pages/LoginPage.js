@@ -110,8 +110,8 @@ const LoginPage = () => {
           username: result.username
         });
         
-        console.log('Navigating to user page...');
-        navigate(`/${result.username}`); // Navigate to user's personal page
+        console.log('Navigating to dashboard...');
+        navigate('/dashboard'); // Navigate to dashboard after login
       } else {
         const errorData = await response.json();
         console.error('Login failed:', errorData);
