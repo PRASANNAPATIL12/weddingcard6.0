@@ -105,7 +105,7 @@ const DashboardPage = () => {
     // Handle form submission and update wedding data
     let updatedData = { ...weddingData, ...formData };
     
-    // Use centralized save function instead of duplicate autoSave
+    // Use centralized save function with debouncing to prevent aggressive auto-save
     saveWeddingData(updatedData);
     setActiveForm(null);
   };
