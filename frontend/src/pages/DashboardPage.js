@@ -716,7 +716,16 @@ const DashboardPage = () => {
                 
                 {/* Scrollable Content */}
                 <div className="h-[calc(100%-2rem)] overflow-y-auto overflow-x-hidden">
-                  <MiniDesktopPreview />
+                  {/* Render actual wedding page component based on current preview page */}
+                  {currentPreviewPage === 'home' && <HomePage />}
+                  {currentPreviewPage === 'story' && <StoryPage />}
+                  {currentPreviewPage === 'schedule' && <SchedulePage />}
+                  {currentPreviewPage === 'gallery' && <GalleryPage />}
+                  {currentPreviewPage === 'party' && <PartyPage />}
+                  {currentPreviewPage === 'rsvp' && <RSVPPage />}
+                  {currentPreviewPage === 'registry' && <RegistryPage />}
+                  {currentPreviewPage === 'faq' && <FAQPage />}
+                  {currentPreviewPage === 'guestbook' && <GuestbookPage isPrivate={false} isDashboard={true} />}
                 </div>
               </div>
             </div>
