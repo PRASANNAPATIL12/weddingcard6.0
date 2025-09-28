@@ -763,9 +763,12 @@ const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTh
   // Handle clicking outside the form to save and close
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
-      // Only auto-save if there are changes and user explicitly clicks outside
+      // Ask user if they want to save changes before closing
       if (hasUnsavedChanges && Object.keys(formData).length > 0) {
-        onSubmit(sectionId, formData);
+        const shouldSave = window.confirm('You have unsaved changes. Do you want to save them before closing?');
+        if (shouldSave) {
+          onSubmit(sectionId, formData);
+        }
       }
       onClose();
     }
