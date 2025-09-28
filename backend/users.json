@@ -285,5 +285,12 @@
     "password": "test123",
     "created_at": "2025-09-28 10:32:18.240202",
     "_id": "68d90eb20f17b10f7ecaeced"
+  },
+  "2883988c-becf-49f7-8c9d-cabcc54916ba": {
+    "id": "2883988c-becf-49f7-8c9d-cabcc54916ba",
+    "username": "testuser789",
+    "password": "testpass123",
+    "created_at": "2025-09-28 12:48:21.712911",
+    "_id": "68d92e95ff5b6d019f4569ad"
   }
 }
