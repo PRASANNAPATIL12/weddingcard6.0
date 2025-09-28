@@ -1929,7 +1929,7 @@
   "e542580f-5655-45a6-9f2f-72087b2545e5": {
     "id": "e542580f-5655-45a6-9f2f-72087b2545e5",
     "user_id": "2883988c-becf-49f7-8c9d-cabcc54916ba",
-    "couple_name_1": "Sarah",
+    "couple_name_1": "Test Wedding Name",
     "couple_name_2": "Michael",
     "wedding_date": "2025-06-15",
     "venue_name": "Sunset Garden Estate",
@@ -1963,8 +1963,7 @@
     "theme": "classic",
     "rsvp_responses": [],
     "created_at": "2025-09-28T12:48:21.953738",
-    "updated_at": "2025-09-28T12:48:21.953739",
-    "shareable_id": "7804329d",
-    "_id": "68d92e95ff5b6d019f4569ae"
+    "updated_at": "2025-09-28T12:51:33.606090",
+    "shareable_id": "7804329d"
   }
 }
