@@ -991,7 +991,7 @@ const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTh
             <div className="flex justify-end space-x-4 mt-8">
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleCloseWithoutSaving}
                 className="px-6 py-3 rounded-xl border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
                 style={{ color: theme.text }}
               >
@@ -999,7 +999,10 @@ const FormPopup = ({ sectionId, onClose, onSubmit, initialData, theme, currentTh
               </button>
               <button
                 type="submit"
-                className="px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
+                disabled={!hasUnsavedChanges}
+                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 ${
+                  !hasUnsavedChanges ? 'opacity-50 cursor-not-allowed' : ''
+                }`}
                 style={{
                   background: theme.gradientAccent,
                   color: theme.primary
