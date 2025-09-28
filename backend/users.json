@@ -299,5 +299,12 @@
     "password": "123456",
     "created_at": "2025-09-28 13:44:58.907374",
     "_id": "68d93bdab6e9af104766dff2"
+  },
+  "910757c3-5beb-473b-bd46-1eb08da6cbc8": {
+    "id": "910757c3-5beb-473b-bd46-1eb08da6cbc8",
+    "username": "demo",
+    "password": "demo123",
+    "created_at": "2025-09-28 13:50:24.811529",
+    "_id": "68d93d203f29dc73cc241bab"
   }
 }
