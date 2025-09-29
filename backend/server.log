@@ -1,0 +1,29 @@
+❌ Frontend build not found at: /app/frontend/build
+React static file serving disabled
+/app/backend/server.py:1512: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/app/backend/server.py:1517: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+❌ Frontend build not found at: /app/frontend/build
+React static file serving disabled
+INFO:     Started server process [839]
+INFO:     Waiting for application startup.
+🔄 Attempting to connect to MongoDB: mongodb+srv://prasannagoudasp12_db_user:RVj1n8gEkHewSwIL@cluster0.euowph1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+✅ Connected to MongoDB database: weddingcard
+2025-09-29 12:44:50,714 - server - INFO - ✅ Connected to MongoDB database: weddingcard
+2025-09-29 12:44:50,714 - server - INFO - ✅ Wedding Card API started successfully
+INFO:     Application startup complete.
+ERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8001): address already in use
+INFO:     Waiting for application shutdown.
+2025-09-29 12:44:50,942 - server - INFO - 👋 Wedding Card API shutdown complete
+INFO:     Application shutdown complete.
